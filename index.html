@@ -12,13 +12,13 @@
 </head>
 
 <body>
-    <section class="game-start-container">
+    <section class="game-start-container" id="menu">
         <div class="choose-player-container">
             <h1>Choose your player</h1>
 
             <div class="x-o-box">
                 <div class="checkbox">
-                    <input type="checkbox" id="checkbox1">
+                    <input type="checkbox" id="checkbox1" checked>
                     <label for="checkbox1">
                         <img src="./img/x.png">
                     </label>
@@ -33,7 +33,7 @@
 
             </div>
 
-            <input type="button" value="Start the Game"></button>
+            <input type="button" value="Start the Game" id="initialize-button"></button>
         </div>
         
         <img src="./img/o.png" id="o1">
@@ -48,6 +48,21 @@
         <img src="./img/x.png" id="x5">
     </section>
 
+    <main class="game non-actived" id="game">
+        <div style="background-color: antiquewhite; width: 100vw;"></div>
+    </main>
+
+    <footer class="footer">
+        <p class="footer-message">
+            Copyright ©
+            <script>
+                document.write(new Date().getFullYear())
+            </script>
+            marcpuerto
+        </p>
+        <a href="https://github.com/MarcPuerto" target="_blank">
+            <img id="close-modal-btn" class="icon git" src="./img/github.png" alt="mark"></a>
+    </footer>
 
     <script src="script.js"></script>
 </body>

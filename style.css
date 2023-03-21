@@ -211,7 +211,6 @@ h1{
 	        animation: slide-in-blurred-top 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) 1s both;
 }
 
-
 @-webkit-keyframes slide-in-blurred-top {
     0% {
       -webkit-transform: translateY(-1000px) scaleY(2.5) scaleX(0.2);
@@ -365,4 +364,42 @@ input[type="checkbox"]:hover:not(:checked)+label {
 
 input[type="checkbox"]:hover:checked+label {
     box-shadow: 0 0 8px 0 var(--dark-font);
+}
+
+.non-actived{
+    display: none;
+}
+
+/*IMAGES*/
+
+.icon {
+    margin: 10px;
+    opacity: 0.8;
+    align-self: self-end;
+    right: 0;
+    top: 0;
+}
+
+.icon.git {
+    width: 30px;
+}
+
+.icon:hover {
+    cursor: pointer;
+    transform: scale(1.15);
+}
+
+/*FOOTER*/
+
+footer {
+    bottom: 0;
+    position: absolute;
+    display: flex;
+    right: 40%;
+    left: 40%;
+}
+
+.footer-message {
+    align-items: center;
+    display: flex;
 }
