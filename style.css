@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
 
+@randomMargin: `Math.round(Math.random() * 100)`;
+
 /*
   VARIABLES DECLARATION ON ROOT
 */
@@ -38,6 +40,9 @@ body {
     height: 100vh;
 }
 
+h1{
+    font-size: xx-large;
+}
 
 /* CONTAINER */
 
@@ -51,7 +56,7 @@ body {
 }
 
 .choose-player-container {
-    z-index: 99;
+    z-index: 90;
     padding: var(--l-pad);
     gap: var(--s-pad);
     display: flex;
@@ -84,46 +89,171 @@ body {
     height: -webkit-fill-available;
 }
 
+/*IMAGES MENU*/
 #o1 {
     height: 104px;
     width: 104px;
     z-index: 2;
-    top: -32px;
-    left: -21px;
+    top: 470px;
+    transform: rotate(20deg);
+    left: 580px;
+
+    -webkit-animation: slide-in-blurred-top 1.1s cubic-bezier(0.230, 1.000, 0.320, 1.000) 1.1s both;
+    animation: slide-in-blurred-top 1.1s cubic-bezier(0.230, 1.000, 0.320, 1.000) 1.1s both;
 }
 
 #o2 {
-    height: 184px;
-    width: 184px;
-    z-index: 1;
-    top: -32px;
-    left: -21px;
+    height: 204px;
+    width: 204px;
+    z-index: 2;
+    top: 270px;
+    transform: rotate(90deg);
+    left: 530px;
+
+    -webkit-animation: slide-in-blurred-top 1.4s cubic-bezier(0.230, 1.000, 0.320, 1.000) 1.4s both;
+    animation: slide-in-blurred-top 1.4s cubic-bezier(0.230, 1.000, 0.320, 1.000) 1.4s both;
 }
 
+#o3 {
+    height: 84px;
+    width: 84px;
+    z-index: 99;
+    top: 200px;
+    transform: rotate(40deg);
+    left: 500px;
+
+    -webkit-animation: slide-in-blurred-top 1.9s cubic-bezier(0.230, 1.000, 0.320, 1.000) 1.9s both;
+    animation: slide-in-blurred-top 1.9s cubic-bezier(0.230, 1.000, 0.320, 1.000) 1.9s both;
+}
+
+#o4 {
+    height: 150px;
+    width: 150px;
+    z-index: 2;
+    top: 500px;
+    transform: rotate(50deg);
+    left: 430px;
+
+    -webkit-animation: slide-in-blurred-top 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) 1s both;
+	        animation: slide-in-blurred-top 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) 1s both;
+}
+
+#o5 {
+    height: 120px;
+    width: 120px;
+    z-index: 2;
+    top: 300px;
+    transform: rotate(70deg);
+    left: 420px;
+
+    -webkit-animation: slide-in-blurred-top 1.8s cubic-bezier(0.230, 1.000, 0.320, 1.000) 1.8s both;
+	        animation: slide-in-blurred-top 1.8s cubic-bezier(0.230, 1.000, 0.320, 1.000) 1.8s both;
+}
 
 #x1 {
     height: 184px;
     width: 184px;
-    z-index: 1;
-    top: 32px;
-    left: 21px;
+    z-index: 2;
+    top: 270px;
+    transform: rotate(210deg);
+    left: 850px;
+
+    -webkit-animation: slide-in-blurred-top 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) 1s both;
+    animation: slide-in-blurred-top 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) 1s both;
 }
 
 #x2 {
-    height: 125px;
-    width: 125px;
+    height: 94px;
+    width: 94px;
     z-index: 2;
-    top: 32px;
-    left: 58px;
+    top: 470px;
+    transform: rotate(10deg);
+    left: 750px;
+
+    -webkit-animation: slide-in-blurred-top 1.9s cubic-bezier(0.230, 1.000, 0.320, 1.000) 1.9s both;
+	        animation: slide-in-blurred-top 1.9s cubic-bezier(0.230, 1.000, 0.320, 1.000) 1.9s both;
+    
 }
 
 #x3 {
-    height: 54px;
-    width: 54px;
-    z-index: 1;
-    top: -32px;
-    left: -85px;
+    height: 124px;
+    width: 124px;
+    z-index: 99;
+    top: 480px;
+    transform: rotate(-50deg);
+    left: 850px;
+
+    -webkit-animation: slide-in-blurred-top 1.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) 1.5s both;
+	        animation: slide-in-blurred-top 1.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) 1.5s both;
 }
+
+#x4 {
+    height: 94px;
+    width: 94px;
+    z-index: 1;
+    top: 140px;
+    transform: rotate(-120deg);
+    left: 900px;
+
+    -webkit-animation: slide-in-blurred-top 1.2s cubic-bezier(0.230, 1.000, 0.320, 1.000) 1.2s both;
+    animation: slide-in-blurred-top 1.2s cubic-bezier(0.230, 1.000, 0.320, 1.000) 1.2s both;
+}
+
+#x5 {
+    height: 84px;
+    width: 84px;
+    z-index: 1;
+    top: 190px;
+    transform: rotate(100deg);
+    left: 750px;
+
+   -webkit-animation: slide-in-blurred-top 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) 1s both;
+	        animation: slide-in-blurred-top 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) 1s both;
+}
+
+
+@-webkit-keyframes slide-in-blurred-top {
+    0% {
+      -webkit-transform: translateY(-1000px) scaleY(2.5) scaleX(0.2);
+              transform: translateY(-1000px) scaleY(2.5) scaleX(0.2);
+      -webkit-transform-origin: 50% 0%;
+              transform-origin: 50% 0%;
+      -webkit-filter: blur(40px);
+              filter: blur(40px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateY(0) scaleY(1) scaleX(1) ;
+              transform: translateY(0) scaleY(1) scaleX(1) ;
+      -webkit-transform-origin: 50% 50%;
+              transform-origin: 50% 50%;
+      -webkit-filter: blur(0);
+              filter: blur(0);
+      opacity: 0.8;
+    }
+  }
+
+  @keyframes slide-in-blurred-top {
+    0% {
+      -webkit-transform: translateY(-1000px) scaleY(2.5) scaleX(0.2);
+              transform: translateY(-1000px) scaleY(2.5) scaleX(0.2);
+      -webkit-transform-origin: 50% 0%;
+              transform-origin: 50% 0%;
+      -webkit-filter: blur(40px);
+              filter: blur(40px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateY(0) scaleY(1) scaleX(1) ;
+              transform: translateY(0) scaleY(1) scaleX(1) ;
+      -webkit-transform-origin: 50% 50%;
+              transform-origin: 50% 50%;
+      -webkit-filter: blur(0);
+              filter: blur(0);
+      opacity: 1;
+    }
+  }
+ 
 
 @-webkit-keyframes roll-in-left {
     0% {
@@ -162,7 +292,7 @@ input[type="button"] {
     color: var(--main4);
     padding: 12px 50px;
     font-size: 16px;
-    font-size: 1rem;
+    font-size: 1.2rem;
     margin-top: 5px;
     display: block;
     cursor: pointer;
