@@ -1,3 +1,5 @@
+//MENU
+
 const intialzeGameButton = document.getElementById("initialize-button");
 const initializeMenu = document.getElementById("menu");
 const game = document.getElementById("game");
@@ -28,3 +30,7 @@ checkbox2.addEventListener("change", () => {
   checkbox1.checked = false;
   checkbox2.checked = true;
 });
+
+
+//GAME
+
