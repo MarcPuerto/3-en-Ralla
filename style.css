@@ -426,6 +426,22 @@ input[type="checkbox"]:hover:checked+label {
 
 /*IMAGES*/
 
+.x-chose{
+    background-image: url(./img/x.png);
+    background-position: center;
+    background-size: 70px 70px;
+    background-repeat: no-repeat;
+    background-color: var(--broken-dark);
+}
+
+.o-chose{
+    background-image: url(./img/o.png);
+    background-position: center;
+    background-size: 70px 70px;
+    background-repeat: no-repeat;
+    background-color: var(--broken-dark);
+}
+
 .icon {
     margin: 10px;
     opacity: 0.8;
