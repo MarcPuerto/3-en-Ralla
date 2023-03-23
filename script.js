@@ -33,7 +33,7 @@ const Player = (sign, active) => {
 const gameControl = () => {
   const playerX = Player("x", true);
   const playerO = Player("o", false);
-  let board = ["", "", "", "","", "", "", "", ""];
+  let board = ["", "", "", "", "", "", "", "", ""];
   let turn = 0;
 
   const getTurn = () => {
@@ -52,19 +52,27 @@ const gameControl = () => {
     return board;
   };
 
+  const resetFields = (game) => {
+    for (let i = 0; i < board.length; i++) {
+      board[i] = "";
+    }
+  };
 
   const passTurn = (e) => {
     if (turn % 2 == 0) {
-      document.getElementById("turn").innerHTML = playerO.getSign().toUpperCase();
+      document.getElementById("turn").innerHTML = playerO
+        .getSign()
+        .toUpperCase();
       //set sign on board
       board[e.id] = "x";
       //set style of square
       e.classList.add("x-chose");
       e.classList.remove("square-x");
       playerX.active = true;
-    } 
-    else {
-      document.getElementById("turn").innerHTML = playerX.getSign().toUpperCase();
+    } else {
+      document.getElementById("turn").innerHTML = playerX
+        .getSign()
+        .toUpperCase();
       //set sign on board
       board[e.id] = "o";
       //set style of square
@@ -76,7 +84,7 @@ const gameControl = () => {
     turn++;
   };
 
-  return { passTurn, getTurn, getPlayerO, getPlayerX, getBoard };
+  return { passTurn, getTurn, getPlayerO, getPlayerX, getBoard, resetFields };
 };
 
 intialzeGameButton.addEventListener("click", (e) => {
@@ -107,53 +115,52 @@ checkbox2.addEventListener("change", () => {
 //GAME
 
 const board = document.getElementById("board");
+const reset_btn = document.getElementById("id");
 
-const newGame = gameControl();
+const game_run = gameControl();
 
 //Add event listener to square of board
 board.querySelectorAll(".square").forEach((square) => {
   square.addEventListener("click", (e) => {
-    newGame.passTurn(e.target);
+    game_run.passTurn(e.target);
     changeHover();
-    checkWinner(newGame.getBoard());
+    checkWinner(game_run.getBoard());
   });
 });
 
-function changeHover(){
-
-  console.log(newGame.getTurn()% 2);
+function changeHover() {
+  console.log(game_run.getTurn() % 2);
   for (let i = 0; i < board.children.length; i++) {
-
-    if(!board.children[i].className.includes("chose") && newGame.getTurn() % 2 == 1)
-    {
-      console.log("entraaa OO" + newGame.getTurn()% 2);
+    if (
+      !board.children[i].className.includes("chose") &&
+      game_run.getTurn() % 2 == 1
+    ) {
       board.children[i].classList.remove("square-x");
       board.children[i].classList.add("square-o");
-    }
-    else if(!board.children[i].className.includes("chose"))
-    {
-      console.log("entraaa XX" + newGame.getTurn()% 2);
+    } else if (!board.children[i].className.includes("chose")) {
       board.children[i].classList.remove("square-o");
       board.children[i].classList.add("square-x");
-    }
-    else{
+    } else {
       board.children[i].classList.remove("square-x");
       board.children[i].classList.remove("square-o");
     }
-  
   }
 }
-
 
 function checkWinner(board) {
   // Define all possible winning combinations
   const winningCombos = [
     // Rows
-    [0, 1, 2], [3, 4, 5], [6, 7, 8],
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
     // Columns
-    [0, 3, 6], [1, 4, 7], [2, 5, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
     // Diagonals
-    [0, 4, 8], [2, 4, 6]
+    [0, 4, 8],
+    [2, 4, 6],
   ];
 
   // Loop through all possible winning combinations
@@ -168,36 +175,39 @@ function checkWinner(board) {
   return null;
 }
 
-
-function setWinnerStyle(winningCombo, winner){
-
-   const square1 = document.getElementById(winningCombo[0]);
-   const square2 = document.getElementById(winningCombo[1]);
-   const square3 = document.getElementById(winningCombo[2]);
+function setWinnerStyle(winningCombo, winner) {
+  const square1 = document.getElementById(winningCombo[0]);
+  const square2 = document.getElementById(winningCombo[1]);
+  const square3 = document.getElementById(winningCombo[2]);
 
   square1.classList.add("winner");
-  square1.classList.remove("square-x");
-  square1.classList.remove("x-chose");
-  square1.classList.remove("o-chose");
+  square1.classList.remove("square-x", "x-chose", "o-chose");
 
   square2.classList.add("winner");
-  square2.classList.remove("square-x");
-  square2.classList.remove("x-chose");
-  square2.classList.remove("o-chose");
+  square2.classList.remove("square-x", "x-chose", "o-chose");
 
   square3.classList.add("winner");
-  square3.classList.remove("square-x");
-  square3.classList.remove("x-chose");
-  square3.classList.remove("o-chose");
+  square3.classList.remove("square-x", "x-chose", "o-chose");
 
-  if(winner == "x"){
+  if (winner == "x") {
     square1.classList.add("winner-x");
     square2.classList.add("winner-x");
     square3.classList.add("winner-x");
-  }
-  else{
+  } else {
     square1.classList.add("winner-o");
     square2.classList.add("winner-o");
     square3.classList.add("winner-o");
   }
 }
+
+//reset button
+reset.addEventListener("click", (e) => {
+  console.log("ee");
+  game_run.resetFields(game_run);
+
+  console.log(game_run);
+  board.querySelectorAll(".square").forEach((square) => {
+      square.className = "";
+      square.classList.add("square", "square-x");
+  });
+});

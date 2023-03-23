@@ -98,6 +98,7 @@ h1{
     justify-content: center;
     align-content: center;
     height: -webkit-fill-available;
+    align-items: center;
 }
 
 #board {
@@ -154,7 +155,7 @@ h1{
     background-position: center;
     background-size: 70px 70px;
     background-repeat: no-repeat;
-    transform: scale(1.10);
+    transform: scale(1.20);
     opacity: 0.7;
     -webkit-animation: rotate-center 0.6s ease-in-out both;
 	animation: rotate-center 0.6s ease-in-out both;
@@ -168,11 +169,6 @@ h1{
   .winner-o{
     background-color: var(--main2);
     background-image: url(./img/o\ empty.png);
-  }
-
-  #reset {
-    display: block;
-    margin: 20px auto;
   }
 
   @-webkit-keyframes rotate-center {
@@ -514,6 +510,29 @@ input[type="checkbox"]:hover:checked+label {
 .icon:hover {
     cursor: pointer;
     transform: scale(1.15);
+}
+
+.reset{
+    padding: 12px 50px;
+    font-size: 16px;
+    font-size: 1.2rem;
+    margin-top: 5px;
+    display: block;
+    cursor: pointer;
+    border-radius: 10px;
+
+    /*style*/
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.reset:hover{
+    transform: scale(1.10);
+    cursor: pointer;
 }
 
 /*FOOTER*/
