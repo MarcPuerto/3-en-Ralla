@@ -33,6 +33,7 @@ const Player = (sign, active) => {
 const gameControl = () => {
   const playerX = Player("x", true);
   const playerO = Player("o", false);
+  let board = ["", "", "", "","", "", "", "", ""];
   let turn = 0;
 
   const getTurn = () => {
@@ -47,14 +48,26 @@ const gameControl = () => {
     return playerO;
   };
 
+  const getBoard = () => {
+    return board;
+  };
+
+
   const passTurn = (e) => {
     if (turn % 2 == 0) {
-      document.getElementById("turn").innerHTML = playerO.getSign();
+      document.getElementById("turn").innerHTML = playerO.getSign().toUpperCase();
+      //set sign on board
+      board[e.id] = "x";
+      //set style of square
       e.classList.add("x-chose");
       e.classList.remove("square-x");
       playerX.active = true;
-    } else {
-      document.getElementById("turn").innerHTML = playerX.getSign();
+    } 
+    else {
+      document.getElementById("turn").innerHTML = playerX.getSign().toUpperCase();
+      //set sign on board
+      board[e.id] = "o";
+      //set style of square
       e.classList.add("o-chose");
       e.classList.remove("square-o");
       playerO.active = true;
@@ -63,7 +76,7 @@ const gameControl = () => {
     turn++;
   };
 
-  return { passTurn, getTurn, getPlayerO, getPlayerX };
+  return { passTurn, getTurn, getPlayerO, getPlayerX, getBoard };
 };
 
 intialzeGameButton.addEventListener("click", (e) => {
@@ -102,6 +115,7 @@ board.querySelectorAll(".square").forEach((square) => {
   square.addEventListener("click", (e) => {
     newGame.passTurn(e.target);
     changeHover();
+    checkWinner(newGame.getBoard());
   });
 });
 
@@ -123,10 +137,67 @@ function changeHover(){
       board.children[i].classList.add("square-x");
     }
     else{
-      board.children[i].classList.add("non-clickable-square");
       board.children[i].classList.remove("square-x");
       board.children[i].classList.remove("square-o");
     }
   
+  }
+}
+
+
+function checkWinner(board) {
+  // Define all possible winning combinations
+  const winningCombos = [
+    // Rows
+    [0, 1, 2], [3, 4, 5], [6, 7, 8],
+    // Columns
+    [0, 3, 6], [1, 4, 7], [2, 5, 8],
+    // Diagonals
+    [0, 4, 8], [2, 4, 6]
+  ];
+
+  // Loop through all possible winning combinations
+  for (let i = 0; i < winningCombos.length; i++) {
+    const [a, b, c] = winningCombos[i];
+    // Check if the board has the same value at all three positions in the winning combination
+    if (board[a] && board[a] === board[b] && board[b] === board[c]) {
+      setWinnerStyle(winningCombos[i], board[a]);
+      return board[a];
+    }
+  }
+  return null;
+}
+
+
+function setWinnerStyle(winningCombo, winner){
+
+   const square1 = document.getElementById(winningCombo[0]);
+   const square2 = document.getElementById(winningCombo[1]);
+   const square3 = document.getElementById(winningCombo[2]);
+
+  square1.classList.add("winner");
+  square1.classList.remove("square-x");
+  square1.classList.remove("x-chose");
+  square1.classList.remove("o-chose");
+
+  square2.classList.add("winner");
+  square2.classList.remove("square-x");
+  square2.classList.remove("x-chose");
+  square2.classList.remove("o-chose");
+
+  square3.classList.add("winner");
+  square3.classList.remove("square-x");
+  square3.classList.remove("x-chose");
+  square3.classList.remove("o-chose");
+
+  if(winner == "x"){
+    square1.classList.add("winner-x");
+    square2.classList.add("winner-x");
+    square3.classList.add("winner-x");
+  }
+  else{
+    square1.classList.add("winner-o");
+    square2.classList.add("winner-o");
+    square3.classList.add("winner-o");
   }
 }

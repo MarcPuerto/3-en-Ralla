@@ -9,15 +9,13 @@
     --green: rgb(33, 250, 131);
     --red: rgb(252, 86, 108);
     --dark-font: #2b2b2b;
-    --main1: #7D5A50;
-    --main2: #B4846C;
+    --back: #fcdec08a;
+    --broken-dark: rgb(68, 68, 68);
+    --main1: rgba(229, 178, 153, 1);
+    --main2: rgba(153, 204, 229, 1);
     --main3: #E5B299;
     --main4: #FCDEC0;
     --main5: #fff3e6;
-    --back: #fcdec08a;
-    --broken-dark: rgb(68, 68, 68);
-    --back: rgb(251, 127, 2);
-    --blue: #3751ff;
     --s-pad: 1rem;
     --l-pad: 2rem;
 }
@@ -36,7 +34,7 @@
 body {
     overflow: hidden;
     background: var(--back);
-    background: linear-gradient(90deg, rgba(229, 178, 153, 1) 20%, rgba(153, 204, 229, 1) 80%);
+    background: linear-gradient(90deg, var(--main1) 20%, var(--main2) 80%);
     height: 100vh;
 }
 
@@ -46,6 +44,10 @@ h1{
 
 /* CONTAINER */
 
+.title-box{
+    display: flex;
+    gap: var(--l-pad);
+}
 
 .game-start-container {
     flex-wrap: wrap;
@@ -128,7 +130,7 @@ h1{
   }
 
   .square-x:hover{
-    background-image: url(./img/x\ empty.png) !important;
+    background-image: url(./img/x\ empty.png);
     background-position: center;
     background-size: 70px 70px;
     background-repeat: no-repeat;
@@ -138,7 +140,7 @@ h1{
   }
 
   .square-o:hover{
-    background-image: url(./img/o\ empty.png) !important;
+    background-image: url(./img/o\ empty.png) ;
     background-position: center;
     background-size: 70px 70px;
     background-repeat: no-repeat;
@@ -147,14 +149,52 @@ h1{
     cursor: pointer;
   }
 
-  .non-clickable-square{
-    cursor: none;
-    
+  .winner{
+    pointer-events: none;
+    background-position: center;
+    background-size: 70px 70px;
+    background-repeat: no-repeat;
+    transform: scale(1.10);
+    opacity: 0.7;
+    -webkit-animation: rotate-center 0.6s ease-in-out both;
+	animation: rotate-center 0.6s ease-in-out both;
   }
-  
+
+  .winner-x{
+    background-color: var(--main1);
+    background-image: url(./img/x\ empty.png);
+  }
+
+  .winner-o{
+    background-color: var(--main2);
+    background-image: url(./img/o\ empty.png);
+  }
+
   #reset {
     display: block;
     margin: 20px auto;
+  }
+
+  @-webkit-keyframes rotate-center {
+    0% {
+      -webkit-transform: rotate(0);
+              transform: rotate(0);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
+  }
+
+  @keyframes rotate-center {
+    0% {
+      -webkit-transform: rotate(0);
+              transform: rotate(0);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
   }
 
 /*IMAGES MENU*/
@@ -442,6 +482,7 @@ input[type="checkbox"]:hover:checked+label {
 /*IMAGES*/
 
 .x-chose{
+    pointer-events: none;
     background-image: url(./img/x.png);
     background-position: center;
     background-size: 70px 70px;
@@ -450,6 +491,7 @@ input[type="checkbox"]:hover:checked+label {
 }
 
 .o-chose{
+    pointer-events: none;
     background-image: url(./img/o.png);
     background-position: center;
     background-size: 70px 70px;
