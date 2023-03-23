@@ -127,14 +127,29 @@ h1{
 
   }
 
-  .square:hover{
-    background-image: url(./img/x\ empty.png);
+  .square-x:hover{
+    background-image: url(./img/x\ empty.png) !important;
     background-position: center;
     background-size: 70px 70px;
     background-repeat: no-repeat;
     opacity: 0.4;
     transform: scale(1.02);
     cursor: pointer;
+  }
+
+  .square-o:hover{
+    background-image: url(./img/o\ empty.png) !important;
+    background-position: center;
+    background-size: 70px 70px;
+    background-repeat: no-repeat;
+    opacity: 0.4;
+    transform: scale(1.02);
+    cursor: pointer;
+  }
+
+  .non-clickable-square{
+    cursor: none;
+    
   }
   
   #reset {
