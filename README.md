@@ -1,5 +1,5 @@
 
-# Library of Alexandria Sing Up Page
+# Tic-Tac-Toe Game
 
 Styled Tic-Tac-Toe game with animations and smooth style
 
