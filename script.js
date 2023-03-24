@@ -52,9 +52,10 @@ const gameControl = () => {
     return board;
   };
 
-  const resetFields = (game) => {
+  const resetFields = () => {
     for (let i = 0; i < board.length; i++) {
       board[i] = "";
+      turn = 0;
     }
   };
 
@@ -116,8 +117,14 @@ checkbox2.addEventListener("change", () => {
 
 const board = document.getElementById("board");
 const reset_btn = document.getElementById("id");
+const x_puntuation = document.getElementById("x-points");
+const o_puntuation = document.getElementById("o-points");
+const x_points = document.getElementById("x-puntuation");
+const o_points = document.getElementById("o-puntuation");
 
 const game_run = gameControl();
+let x_counter = 0;
+let o_counter = 0;
 
 //Add event listener to square of board
 board.querySelectorAll(".square").forEach((square) => {
@@ -193,21 +200,42 @@ function setWinnerStyle(winningCombo, winner) {
     square1.classList.add("winner-x");
     square2.classList.add("winner-x");
     square3.classList.add("winner-x");
-  } else {
+
+    x_puntuation.classList.add("puntuation-win");
+    //increase count
+    x_counter ++;
+
+    x_points.innerHTML = x_counter;
+    //timeout for animation
+    setTimeout(function() {
+      x_puntuation.classList.remove("puntuation-win");
+    }, 3000);
+  } 
+  else {
     square1.classList.add("winner-o");
     square2.classList.add("winner-o");
     square3.classList.add("winner-o");
+
+    o_puntuation.classList.add("puntuation-win");
+    //increase count
+    o_counter ++;
+
+    o_points.innerHTML = o_counter;
+    //timeout for animation
+    setTimeout(function() {
+      console.log("entar");
+      o_puntuation.classList.remove("puntuation-win");
+    }, 3000);
   }
 }
 
 //reset button
 reset.addEventListener("click", (e) => {
-  console.log("ee");
   game_run.resetFields(game_run);
 
   console.log(game_run);
   board.querySelectorAll(".square").forEach((square) => {
       square.className = "";
-      square.classList.add("square", "square-x");
+      square.classList.add("square", "blurred-card", "square-x");
   });
 });

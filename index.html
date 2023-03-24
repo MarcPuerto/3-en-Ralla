@@ -13,7 +13,7 @@
 
 <body>
     <section class="game-start-container" id="menu">
-        <div class="choose-player-container">
+        <div class="choose-player-container blurred-card">
             <h1>Choose your player</h1>
 
             <div class="x-o-box">
@@ -53,18 +53,35 @@
             <h1>Turn of</h1>
             <h1 id="turn">X</h1>    
         </div>
-        <div id="board">
-            <div class="square square-x" id="0"></div>
-            <div class="square square-x" id="1"></div>
-            <div class="square square-x" id="2"></div>
-            <div class="square square-x" id="3"></div>
-            <div class="square square-x" id="4"></div>
-            <div class="square square-x" id="5"></div>
-            <div class="square square-x" id="6"></div>
-            <div class="square square-x" id="7"></div>
-            <div class="square square-x" id="8"></div>
+
+
+        <div class="puntuation-x-box ">
+            <h2>X POINTS</h2>
+            <div id="x-points" class="blurred-card puntuation">
+                <h2 id="x-puntuation">0</h2>
+            </div>
         </div>
-        <button id="reset" class="reset">Reset</button>
+
+        <div id="board">
+            <div class="square blurred-card square-x" id="0"></div>
+            <div class="square blurred-card square-x" id="1"></div>
+            <div class="square blurred-card square-x" id="2"></div>
+            <div class="square blurred-card square-x" id="3"></div>
+            <div class="square blurred-card square-x" id="4"></div>
+            <div class="square blurred-card square-x" id="5"></div>
+            <div class="square blurred-card square-x" id="6"></div>
+            <div class="square blurred-card square-x" id="7"></div>
+            <div class="square blurred-card square-x" id="8"></div>
+        </div>
+
+        <div class="puntuation-o-box">
+            <h2>O POINTS</h2>
+            <div id="o-points" class="blurred-card puntuation">
+                <h2 id="o-puntuation">0</h2>
+            </div>
+        </div>
+        
+        <button id="reset" class="reset blurred-card">Reset</button>
     </main>
 
     <footer class="footer">
