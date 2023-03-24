@@ -1,14 +1,14 @@
 
-# Library of Alexandria Sing Up Page
+# Tic-Tac-Toe Game
 
-Styled Sign Up page with dynamic and creative style.
-
-
+Styled Tic-Tac-Toe game with animations and smooth style
 
 
 ## Screenshots
 
-![App Screenshot](https://i.imgur.com/JxgvA5j.png)
+![App Screenshot](https://i.imgur.com/DPRsMRv.png)
+![App Screenshot](https://i.imgur.com/kGqEG9K.png)
+![App Screenshot](https://i.imgur.com/SApgJye.png)
 
 
 ## Authors
@@ -22,7 +22,7 @@ Main scheme colors:
 | Main1 | ![#7D5A50](https://via.placeholder.com/10/7D5A50?text=+) #7D5A50 |
 | Main2 | ![#B4846C](https://via.placeholder.com/10/B4846C?text=+) #B4846C |
 | Main3 | ![#E5B299](https://via.placeholder.com/10/E5B299?text=+) #E5B299 |
-| Main4 | ![#FCDEC0](https://via.placeholder.com/10/FCDEC0?text=+) #FCDEC0 |
+| MainOp1 | ![#FCDEC0](https://via.placeholder.com/10/99cce5?text=+) #99cce5 |
 
 ## Built with
 
