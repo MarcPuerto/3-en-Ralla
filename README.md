@@ -1,7 +1,7 @@
 
 # Library of Alexandria Sing Up Page
 
-Styled Tic-Tac-Toe game witha animations and smooth style
+Styled Tic-Tac-Toe game with animations and smooth style
 
 
 ## Screenshots
