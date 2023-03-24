@@ -136,7 +136,6 @@ board.querySelectorAll(".square").forEach((square) => {
 });
 
 function changeHover() {
-  console.log(game_run.getTurn() % 2);
   for (let i = 0; i < board.children.length; i++) {
     if (
       !board.children[i].className.includes("chose") &&
@@ -223,7 +222,6 @@ function setWinnerStyle(winningCombo, winner) {
     o_points.innerHTML = o_counter;
     //timeout for animation
     setTimeout(function() {
-      console.log("entar");
       o_puntuation.classList.remove("puntuation-win");
     }, 3000);
   }
@@ -232,8 +230,7 @@ function setWinnerStyle(winningCombo, winner) {
 //reset button
 reset.addEventListener("click", (e) => {
   game_run.resetFields(game_run);
-
-  console.log(game_run);
+  
   board.querySelectorAll(".square").forEach((square) => {
       square.className = "";
       square.classList.add("square", "blurred-card", "square-x");
