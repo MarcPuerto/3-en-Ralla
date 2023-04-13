@@ -1,15 +1,12 @@
 
-# Tic-Tac-Toe Game
+# Simple Weather App
 
-Styled Tic-Tac-Toe game with animations and smooth style
+Simple weather app with searchbar and simple error control. Odin project exercice
 
 
 ## Screenshots
 
-![App Screenshot](https://i.imgur.com/DPRsMRv.png)
-![App Screenshot](https://i.imgur.com/kGqEG9K.png)
-![App Screenshot](https://i.imgur.com/SApgJye.png)
-
+![App Screenshot](https://imgur.com/gallery/SFjGgrQ)
 
 ## Authors
 
